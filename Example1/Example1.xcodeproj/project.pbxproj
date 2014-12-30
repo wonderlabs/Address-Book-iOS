@@ -15,8 +15,8 @@
 		DD18CB241A434465003071E4 /* Example1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = DD18CB231A434465003071E4 /* Example1Tests.m */; };
 		DD18CB321A4380EB003071E4 /* ContactListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD18CB311A4380EB003071E4 /* ContactListTableViewController.m */; };
 		DD18CB381A48AB2A003071E4 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = DD18CB371A48AB2A003071E4 /* Person.m */; };
-		DD18CB401A4A5E78003071E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD18CB3F1A4A5E78003071E4 /* Main.storyboard */; };
 		DD18CB431A4A6303003071E4 /* UserProfileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD18CB421A4A6303003071E4 /* UserProfileTableViewController.m */; };
+		DD630A441A532E1E00155DD8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD630A431A532E1E00155DD8 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,9 +46,9 @@
 		DD18CB311A4380EB003071E4 /* ContactListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactListTableViewController.m; sourceTree = "<group>"; };
 		DD18CB361A48AB2A003071E4 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		DD18CB371A48AB2A003071E4 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
-		DD18CB3F1A4A5E78003071E4 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../../.Trash/Main.storyboard; sourceTree = "<group>"; };
 		DD18CB411A4A6303003071E4 /* UserProfileTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserProfileTableViewController.h; sourceTree = "<group>"; };
 		DD18CB421A4A6303003071E4 /* UserProfileTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserProfileTableViewController.m; sourceTree = "<group>"; };
+		DD630A431A532E1E00155DD8 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../../../../.Trash/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +96,7 @@
 				DD18CB0F1A434465003071E4 /* ViewController.m */,
 				DD18CB301A4380EB003071E4 /* ContactListTableViewController.h */,
 				DD18CB311A4380EB003071E4 /* ContactListTableViewController.m */,
-				DD18CB3F1A4A5E78003071E4 /* Main.storyboard */,
+				DD630A431A532E1E00155DD8 /* Main.storyboard */,
 				DD18CB411A4A6303003071E4 /* UserProfileTableViewController.h */,
 				DD18CB421A4A6303003071E4 /* UserProfileTableViewController.m */,
 				DD18CB361A48AB2A003071E4 /* Person.h */,
@@ -214,7 +214,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD18CB401A4A5E78003071E4 /* Main.storyboard in Resources */,
+				DD630A441A532E1E00155DD8 /* Main.storyboard in Resources */,
 				DD18CB181A434465003071E4 /* LaunchScreen.xib in Resources */,
 				DD18CB151A434465003071E4 /* Images.xcassets in Resources */,
 			);
