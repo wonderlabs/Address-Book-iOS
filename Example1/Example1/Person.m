@@ -2,8 +2,8 @@
 //  Person.m
 //  Example1
 //
-//  Created by Monica Brinkman on 2014-12-22.
-//  Copyright (c) 2014 Monica Brinkman. All rights reserved.
+//  Created by Drasko Vucenovic on 2014-12-22.
+//  Copyright (c) 2014 Drasko Vucenovic. All rights reserved.
 //
 
 #import "Person.h"
@@ -32,9 +32,6 @@
     NSString* _dateOfBirth;
     NSString* _homePhone;
     NSString* _cellPhone;
-    
-    
-    //Handel Picture
 }
 
 @synthesize gender = _gender;
@@ -72,9 +69,5 @@
     _homePhone = [user objectForKey:@"phone"];
     _cellPhone = [user objectForKey:@"cell"];
 }
-
-
-
-//{"results":[{"user":{"gender":"female","name":{"title":"mrs","first":"sherri","last":"king"},"location":{"street":"5129 hogan st","city":"addison","state":"mississippi","zip":"72940"},"email":"sherri.king89@example.com","username":"crazyelephant15","password":"bryan","salt":"PVXFMB4Z","md5":"4a4a3834e1d1c19a1a0e94cef7b564da","sha1":"8817d5f72756dca0fe31b3b2053b1a689c8b072d","sha256":"559b82b9100d383419908d91fb2bca1646649d246d225a08b05e867535e95834","registered":"1158686594","dob":"222514253","phone":"(645)-891-2651","cell":"(999)-791-6917","SSN":"526-38-6273","picture":{"large":"http://api.randomuser.me/portraits/women/21.jpg","medium":"http://api.randomuser.me/portraits/med/women/21.jpg","thumbnail":"http://api.randomuser.me/portraits/thumb/women/21.jpg"},"version":"0.4.1"},"seed":"b5d88d263f5b30bb"}]}
 
 @end

@@ -1,19 +1,20 @@
 //
-//  Example1Tests.m
-//  Example1Tests
+//  ContactListTableViewControllerTest.m
+//  Example1
 //
-//  Created by Drasko Vucenovic on 2014-12-18.
+//  Created by Drasko Vucenovic on 2014-12-30.
 //  Copyright (c) 2014 Drasko Vucenovic. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
+#import "ContactListTableViewController.h"
 
-@interface Example1Tests : XCTestCase
+@interface ContactListTableViewControllerTest : XCTestCase
 
 @end
 
-@implementation Example1Tests
+@implementation ContactListTableViewControllerTest
 
 - (void)setUp {
     [super setUp];
@@ -26,7 +27,6 @@
 }
 
 - (void)testExample {
-    // This is an example of a functional test case.
     XCTAssert(YES, @"Pass");
 }
 

@@ -2,8 +2,8 @@
 //  ContactListTableViewController.m
 //  Example1
 //
-//  Created by Monica Brinkman on 2014-12-18.
-//  Copyright (c) 2014 Monica Brinkman. All rights reserved.
+//  Created by Drasko Vucenovic on 2014-12-18.
+//  Copyright (c) 2014 Drasko Vucenovic. All rights reserved.
 //
 
 #import "ContactListTableViewController.h"
@@ -13,9 +13,7 @@
 
 @interface ContactListTableViewController ()
 
-@property NSMutableArray* toDoItems;
 @property NSMutableArray* userProfiles;
-@property NSInteger numResults;
 
 @end
 
@@ -24,20 +22,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.numResults = 100; //set number of desired results
+    NSInteger numResults = 100; //set number of desired results
     
-    //self.toDoItems = [[NSMutableArray alloc ]init];
     self.userProfiles = [[NSMutableArray alloc]init];
-    [self parseData];
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self parseData: numResults];
 }
 
-- (void) parseData{
-    NSString* url = [NSString stringWithFormat:@"http://api.randomuser.me/?results=%ld", self.numResults];
+- (void) parseData: (NSInteger) results {
+    NSString* url = [NSString stringWithFormat:@"http://api.randomuser.me/?results=%ld", results];
     NSURL* website = [NSURL URLWithString:url];
     NSData* json = [NSData dataWithContentsOfURL:website];
     
@@ -48,7 +40,12 @@
         if (error == nil) {
             NSArray* rootObject = [jsonResult valueForKey:@"results"];
             [self updateUserProfiles:rootObject];
+        }else {
+            [NSException raise:@"Json Error" format:@"%@", error];
         }
+    }
+    else{
+        [NSException raise:@"Error" format:@"Could not retrieve data from url. Please check internet connection and try again."];
     }
 }
 
@@ -58,8 +55,7 @@
     for (int i = 0; i < [profiles count]; i++) {
         Person* person = [[Person alloc]init];
         [person initWithModel:profiles[i]];
-        
-        [self.userProfiles addObject:person];
+        [self.userProfiles addObject:person]; //add each person in profiles array to the global private userProfiles variable.
     }
 }
 
@@ -84,18 +80,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ListPrototypeCell" forIndexPath:indexPath];
-    
-    // Configure the cell...
-//    ToDoItem* toDoItem = [self.toDoItems objectAtIndex:indexPath.row];
-//    cell.textLabel.text = toDoItem.itemName;
-//
-//    if(toDoItem.completed){
-//        cell.accessoryType = UITableViewCellAccessoryCheckmark;
-//    }
-//    else{
-//        cell.accessoryType = UITableViewCellAccessoryNone;
-//    }
-    
+    //Configure the cell..
     Person* person = [self.userProfiles objectAtIndex:indexPath.row];
     NSString* personFullName = [NSString stringWithFormat:@"%@ %@ %@", person.title, person.firstName, person.lastName];
     cell.textLabel.text = personFullName;
@@ -103,67 +88,18 @@
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     if ([segue.identifier isEqualToString:@"showContactDetails"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         UserProfileTableViewController* destinationViewController = segue.destinationViewController;
-        
-        //Person* thisPerson = [self.userProfiles objectAtIndex:indexPath.row];
-       
-        destinationViewController.person = [self.userProfiles objectAtIndex:indexPath.row];
+        destinationViewController.person = [self.userProfiles objectAtIndex:indexPath.row]; //send selected person's profile inormation to the destination view controller (User Profile view controller).
+    } else {
+        [NSException raise:@"Error" format:@"Could not find segue 'showContactDetails'."];
     }
-
-}
-
-
-#pragma mark - Table View Delegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-//    [tableView deselectRowAtIndexPath:indexPath animated:NO];
-//    ToDoItem *tappedItem = [self.toDoItems objectAtIndex:indexPath.row];
-//    tappedItem.completed = !tappedItem.completed;
-//    [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
-
 }
 
 @end

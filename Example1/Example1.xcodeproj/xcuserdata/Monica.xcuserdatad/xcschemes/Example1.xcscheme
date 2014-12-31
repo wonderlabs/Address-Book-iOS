@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "DD18CB031A434465003071E4"
-               BuildableName = "AddressBook.app"
+               BuildableName = "Example1.app"
                BlueprintName = "Example1"
                ReferencedContainer = "container:Example1.xcodeproj">
             </BuildableReference>
@@ -29,7 +29,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "DD18CB1C1A434465003071E4"
-               BuildableName = "AddressBookTests.xctest"
+               BuildableName = "Example1Tests.xctest"
                BlueprintName = "Example1Tests"
                ReferencedContainer = "container:Example1.xcodeproj">
             </BuildableReference>
@@ -47,7 +47,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "DD18CB1C1A434465003071E4"
-               BuildableName = "AddressBookTests.xctest"
+               BuildableName = "Example1Tests.xctest"
                BlueprintName = "Example1Tests"
                ReferencedContainer = "container:Example1.xcodeproj">
             </BuildableReference>
@@ -57,7 +57,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DD18CB031A434465003071E4"
-            BuildableName = "AddressBook.app"
+            BuildableName = "Example1.app"
             BlueprintName = "Example1"
             ReferencedContainer = "container:Example1.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DD18CB031A434465003071E4"
-            BuildableName = "AddressBook.app"
+            BuildableName = "Example1.app"
             BlueprintName = "Example1"
             ReferencedContainer = "container:Example1.xcodeproj">
          </BuildableReference>
@@ -94,7 +94,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DD18CB031A434465003071E4"
-            BuildableName = "AddressBook.app"
+            BuildableName = "Example1.app"
             BlueprintName = "Example1"
             ReferencedContainer = "container:Example1.xcodeproj">
          </BuildableReference>
