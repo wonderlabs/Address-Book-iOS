@@ -27,8 +27,17 @@
 }
 
 - (void)testExample {
-    XCTAssert(YES, @"Pass");
+  //  id mockController = [ContactListTableViewController class];
+    
 }
+
+//Test that when the internet is cut, the parseData method throws an excpetion.
+-(void) testNoInternetDataCollection{
+    id mockController = [ContactListTableViewController class];
+    XCTAssertThrowsSpecific([mockController parseData:10], NSException, @"Should throw internet exception.");
+    
+}
+
 
 - (void)testPerformanceExample {
     // This is an example of a performance test case.

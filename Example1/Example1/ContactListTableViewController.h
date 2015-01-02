@@ -10,5 +10,6 @@
 
 @interface ContactListTableViewController : UITableViewController
 
+- (void) parseData: (NSInteger) results; //parseData was made public only for the purpose of Unit Testing, otherwise I would keep this method private as well.
 
 @end
